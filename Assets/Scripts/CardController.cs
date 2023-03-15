@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class CardController : MonoBehaviour, IBeginDragHandler,IDragHandler, IEndDragHandler
 {
     private Image image;
+    private Vector3 offset;
     private void Awake()
     {
         image = GetComponent<Image>();
@@ -16,11 +17,13 @@ public class CardController : MonoBehaviour, IBeginDragHandler,IDragHandler, IEn
     {
         transform.SetParent(transform.root);
         image.raycastTarget = false;
+        offset = Input.mousePosition-this.transform.position;
+
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        transform.position = Input.mousePosition;
+        transform.position = Input.mousePosition-offset;
     }
 
     public void OnEndDrag(PointerEventData eventData)
