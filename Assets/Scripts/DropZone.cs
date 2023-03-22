@@ -3,10 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DropZone : MonoBehaviour, IPointerEnterHandler
+public class DropZone : MonoBehaviour, IDropHandler
 {
-    public void OnPointerEnter(PointerEventData eventData)
+    public CardController.Type typeOfCard;
+    public void OnDrop(PointerEventData eventData)
     {
-        CardManager.LastEnteredDropZone = transform;
+        CardController c = eventData.pointerDrag.GetComponent<CardController>();
+        if (c != null )
+        {
+            if(typeOfCard == c.typeOfCard)
+            {
+                c.parentToReturnTo = this.transform;
+            }
+        }
     }
 }

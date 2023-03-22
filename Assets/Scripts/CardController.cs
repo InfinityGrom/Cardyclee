@@ -4,31 +4,32 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class CardController : MonoBehaviour, IBeginDragHandler,IDragHandler, IEndDragHandler
+public class CardController : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    private Image image;
-    private Vector3 offset;
-    private void Awake()
-    {
-        image = GetComponent<Image>();
-    }
+    public Transform parentToReturnTo = null;
+    public Vector3 offset;
+    public enum Type { ENEMY, FRIENDLY };
+    public Type typeOfCard = Type.FRIENDLY;
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        transform.SetParent(transform.root);
-        image.raycastTarget = false;
+        parentToReturnTo = this.transform.parent;
+        this.transform.SetParent(this.transform.parent.parent);
+        GetComponent<CanvasGroup>().blocksRaycasts = false;
+        //This line fixes the mouse teleportation to the center of the card when clicked
         offset = Input.mousePosition-this.transform.position;
 
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        transform.position = Input.mousePosition-offset;
+        this.transform.position = Input.mousePosition-offset;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        transform.SetParent(CardManager.LastEnteredDropZone);
-        image.raycastTarget = true;
+        //transform.position=Input.mousePosition;
+        this.transform.SetParent(parentToReturnTo);
+        GetComponent<CanvasGroup>().blocksRaycasts = true;
     }
 }
