@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Deck
 {
+    public Card card;
     List<Card> cardDb = new List<Card>();
     void Awake()
     {

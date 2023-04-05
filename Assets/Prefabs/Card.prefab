@@ -31,7 +31,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7277096889234759351}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 7277096889234759346}
   - component: {fileID: 7287088988257340729}
   - component: {fileID: -2142898181238099615}
-  - component: {fileID: 193570476348299882}
+  - component: {fileID: 4397730983257469783}
   m_Layer: 5
   m_Name: Card
   m_TagString: Untagged
@@ -169,9 +169,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7277096889282393509}
   - {fileID: 7277096888687622773}
   - {fileID: 7277096890581393966}
+  - {fileID: 7277096889282393509}
   - {fileID: 7277096890541361188}
   - {fileID: 7277096890649586330}
   m_Father: {fileID: 0}
@@ -269,7 +269,7 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &193570476348299882
+--- !u!114 &4397730983257469783
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -278,10 +278,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 7277096889234759350}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46d074021f3a0304bb0952260aeedb2c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4c528bb2d74b6b5458805426709a18d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CardName: {fileID: 0}
+  cardId: 0
+  nameText: {fileID: 7277096889282393510}
+  descriptionText: {fileID: 0}
+  art: {fileID: 7277096890649586331}
+  costText: {fileID: 7277096888687622774}
+  hpText: {fileID: 7277096890541361189}
+  attackText: {fileID: 7277096890581393967}
 --- !u!1 &7277096889282393508
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,7 +319,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7277096889234759351}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -583,7 +589,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7277096889234759351}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,13 +11,12 @@ public class Card : ScriptableObject
     public int id;
     public int maxHp;
     public int energy;
+    public int attack;
     
-    public TextMeshPro cardName;
-    public TextMeshPro cardCost;
-    public TextMeshPro cardHp;
-    public TextMeshPro cardAttack;
+    public string cardName;
+    public string description;
     
-    Sprite image;
+    public Sprite image;
 
     
 
