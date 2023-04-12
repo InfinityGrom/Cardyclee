@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Test
   m_EditorClassIdentifier: 
   id: 0
-  maxHp: 0
-  energy: 0
-  attack: 0
-  cardName: 
-  description: 
+  maxHp: 3
+  energy: 2
+  attack: 1
+  cardName: Test
+  description: Test
   image: {fileID: 0}
